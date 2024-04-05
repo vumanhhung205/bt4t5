@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tìm kiếm phần tử trong mảng</title>
+<script>
+function timKiem() {
+    var mang = [10, 20, 30, 40, 50]; // Mảng đã có sẵn
+    var phanTuCanTim = parseInt(document.getElementById("giatri").value);
+    var viTri = mang.indexOf(phanTuCanTim);
+    if (viTri !== -1) {
+        document.getElementById("ketqua").innerHTML = "Phần tử " + phanTuCanTim + " được tìm thấy tại vị trí " + viTri + " trong mảng.";
+    } else {
+        document.getElementById("ketqua").innerHTML = "Phần tử không tồn tại trong mảng.";
+    }
+}
+</script>
+</head>
+<body>
+<h2>Tìm kiếm phần tử trong mảng</h2>
+<label for="giatri">Nhập giá trị cần tìm:</label>
+<input type="text" id="giatri">
+<button onclick="timKiem()">Tìm kiếm</button>
+<p id="ketqua"></p>
+</body>
+</html>

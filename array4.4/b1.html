@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hiển thị số nguyên từ mảng</title>
+<script>
+function hienThiSoNguyen() {
+    var mang = document.getElementById("mang").value.split(",");
+    var soNguyen = [];
+    for (var i = 0; i < mang.length; i++) {
+        if (!isNaN(parseInt(mang[i])) && parseInt(mang[i]) === parseFloat(mang[i])) {
+            soNguyen.push(parseInt(mang[i]));
+        }
+    }
+    if (soNguyen.length > 0) {
+        document.getElementById("ketqua").innerHTML = "Các số nguyên trong mảng: " + soNguyen.join(", ");
+    } else {
+        document.getElementById("ketqua").innerHTML = "Trong mảng không tồn tại số nguyên";
+    }
+}
+</script>
+</head>
+<body>
+<h2>Nhập mảng và hiển thị số nguyên</h2>
+<label for="mang">Nhập mảng (các phần tử phân cách nhau bằng dấu phẩy):</label>
+<input type="text" id="mang">
+<button onclick="hienThiSoNguyen()">Hiển thị</button>
+<p id="ketqua"></p>
+</body>
+</html>

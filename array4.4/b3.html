@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Đếm số lần xuất hiện trong mảng</title>
+<script>
+function demSoLanXuatHien() {
+    var mang = [1, 2, 3, 4, 2, 5, 2, 6, 2]; // Mảng số nguyên đã có sẵn
+    var soCanDem = parseInt(document.getElementById("giatri").value);
+    var dem = 0;
+    for (var i = 0; i < mang.length; i++) {
+        if (mang[i] === soCanDem) {
+            dem++;
+        }
+    }
+    document.getElementById("ketqua").innerHTML = "Số lần xuất hiện của " + soCanDem + " trong mảng là: " + dem;
+}
+</script>
+</head>
+<body>
+<h2>Đếm số lần xuất hiện trong mảng</h2>
+<label for="giatri">Nhập số nguyên cần đếm:</label>
+<input type="text" id="giatri">
+<button onclick="demSoLanXuatHien()">Đếm</button>
+<p id="ketqua"></p>
+</body>
+</html>
